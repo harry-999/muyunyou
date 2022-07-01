@@ -1,0 +1,1384 @@
+/* 设置所有h2 em的公共类 */
+.common-part h2 {
+    font-family: PingFangSC-Medium;
+    font-size: 36px;
+    color: #000000;
+    /* text-align: justify; */
+    line-height: 54px;
+    /* float: left; */
+}
+
+.common-part em {
+    position: relative;
+    top: 20px;
+    left: 10px;
+    color: #1C1F21;
+    float: left;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    text-align: justify;
+    line-height: 18px;
+    width: 228px;
+}
+
+.site-head {
+    height: 150px;
+    min-width: 1152px;
+}
+
+.site-head div.topbar {
+    height: 32px;
+    background-color: #2A2A2A;
+    line-height: 32px;
+}
+
+.site-head div.topbar a {
+    color: white;
+}
+
+.site-head div.topbar .center-wrap .shortcut-links {
+    /* overflow: hidden; */
+}
+
+.site-head div.topbar .center-wrap .shortcut-links {
+    /* 设置浮动与右边的图片并排 */
+    float: left;
+}
+
+/* 注意此时用到子选择器>原因:为了后面不会因为将子菜单选择混乱 */
+.site-head div.topbar .center-wrap .shortcut-links>ul>li {
+    /* 设置浮动原因是快速导航栏各连接并排显示 */
+    float: left;
+    margin-right: 18px;
+    font-size: 12px;
+}
+
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu {
+    padding-right: 12px;
+    position: relative;
+}
+
+/* 利用盒子绝对定位覆盖制作小三角形，用过渡实现旋转交互作用 */
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu .arrow {
+    position: absolute;
+    /* background-color: orange; */
+    right: -2px;
+    top: 50%;
+    margin-top: -6px;
+    height: 12px;
+    width: 12px;
+    transition: transform .2s linear 0s;
+}
+
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu .arrow b {
+    height: 7px;
+    width: 7px;
+    position: absolute;
+    background-color: white;
+    transform: rotate(45deg);
+    top: 2.3px;
+    left: 2px;
+}
+
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu .arrow i {
+    height: 7px;
+    width: 7px;
+    position: absolute;
+    background-color: #2A2A2A;
+    transform: rotate(45deg);
+    top: 1.1px;
+    left: 2px;
+}
+
+/* 设置topbar鼠标在箭头时候出现副内容
+先设计共性 */
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu .menu {
+
+    background-color: white;
+    position: absolute;
+    top: 31px;
+    left: 0px;
+    /* 注意因为不是属于main-nav所以绝对定位盖不住main-nav内容，所以设置权重从而可以盖住其它东西， */
+    z-index: 999;
+    display: none;
+}
+
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu:hover div {
+    display: block;
+}
+
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu .menu_list a {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #1C1F21;
+    /* 不需要设置，因为父元素li已经设置了line-hight a会继承li父亲(就近原则)的行高设置 */
+    /* line-height: 25px; */
+}
+
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu .menu_list li {
+    padding-left: 6px;
+    line-height: 25px;
+}
+
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu .menu_list li:hover a {
+    color: orange;
+}
+
+/* 再设计每一个子菜单的个性 */
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu .sqmenu {
+    width: 121px;
+}
+
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu .scmenu {
+    width: 76px;
+}
+
+.site-head div.topbar .center-wrap .shortcut-links>ul>li.have-menu .jdmsmenu {
+    width: 64px;
+}
+
+
+
+
+.site-head div.topbar .center-wrap .topbar-r {
+    width: 225px;
+    float: right;
+}
+
+.site-head div.topbar .center-wrap .topbar-r a,
+.site-head div.topbar .center-wrap .topbar-r span {
+    margin-right: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.site-head div.topbar .center-wrap .topbar-r a:last-child {
+    margin-right: 0px;
+}
+
+.site-head .main-nav {
+    height: 40px;
+    background-color: #20BD9A;
+    min-width: 1152px;
+    /* overflow: hidden; */
+
+}
+
+/* 我之前出现的bug：设置main-nav菜单的时候已经设置了子绝父相但是不会跟着父相的定位走
+原因：就是没有加下面这一句话，导致的是a标签左浮动a标签的父元素li标签之前没有设置高度导致高度因为a浮动而自动为0 */
+.site-head .main-nav .center-wrap>ul>li {
+    float: left;
+    margin-right: 18px;
+}
+
+.site-head .main-nav .center-wrap>ul>li a {
+
+    line-height: 40px;
+    /* margin-right: 34px; */
+    color: white;
+    font-size: 16px;
+}
+
+.site-head .main-nav .center-wrap .have-menu {
+    position: relative;
+    padding-right: 16px;
+
+}
+
+/* 利用伪元素制作小三角形 */
+.site-head .main-nav .center-wrap .have-menu::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    /* background-color: orange; */
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    margin-top: -1px;
+    border: 4px solid transparent;
+    border-top-color: white;
+    /* 设置底边框为none原因在设置动画的时候防止是整个盒子在翻转 */
+    border-bottom: none;
+    transition: transform .2s linear 0s;
+
+}
+
+.site-head .main-nav .center-wrap .have-menu:hover::before {
+    transform: rotate(180deg);
+}
+
+/* 设置main-nav鼠标在箭头时候出现副内容 */
+/* 设置共性 */
+.site-head .main-nav .center-wrap ul li.menu {
+    position: relative;
+}
+
+.site-head .main-nav .center-wrap ul li.menu div.menu {
+    background-color: white;
+    position: absolute;
+    top: 36px;
+    left: 0px;
+    padding: 8px;
+    display: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+}
+
+.site-head .main-nav .center-wrap>ul>li .menu dl dt {
+    font-family: PingFangSC-Semibold;
+    font-size: 14px;
+    color: #1C1F21;
+    text-align: justify;
+    line-height: 22px;
+    font-weight: 700;
+}
+
+.site-head .main-nav .center-wrap>ul>li .menu dl dd a {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #1C1F21;
+    text-align: justify;
+    line-height: 18px;
+    margin-right: 3px;
+}
+
+.site-head .main-nav .center-wrap>ul>li.menu:hover div.menu {
+    display: block;
+}
+
+.site-head .main-nav .center-wrap>ul>li .have-menu:hover {
+    color: orange;
+}
+
+.site-head .main-nav .center-wrap>ul>li .menu dd a:hover {
+    color: orange;
+}
+
+/* 设置个性 */
+.site-head .main-nav .center-wrap>ul>li .jjzyxmenu {
+    width: 160px;
+}
+
+.site-head .main-nav .center-wrap>ul>li.menu .gtymenu {
+    width: 102px;
+}
+
+.site-head .main-nav .center-wrap>ul>li.menu .ddwlmenu {
+    width: 170px;
+}
+
+.site-head .main-nav .center-wrap>ul>li.menu .sdlymenu {
+    width: 118px;
+}
+
+
+
+
+
+.site-head .header-con {
+    padding: 21px 0;
+    height: 36px;
+}
+
+.site-head .header-con .center-wrap {
+    /* overflow: hidden; */
+}
+
+.site-head .header-con .center-wrap h1 {
+    height: 36px;
+    width: 120px;
+    font-size: 24px;
+    line-height: 36px;
+    float: left;
+    color: #20BD9A;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.site-head .header-con .center-wrap .soso-box {
+
+    width: 405px;
+    float: left;
+
+    padding-top: 2px;
+
+    /* overflow: hidden; */
+}
+
+.site-head .header-con .center-wrap .soso-box input {
+    /* 取消外线 */
+    outline: none;
+    width: 356px;
+    height: 28px;
+    border: 1px solid #20BD9A;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    float: left;
+}
+
+.site-head .header-con .center-wrap .soso-box .btn {
+    display: inline-block;
+    width: 32px;
+    height: 30px;
+    background-color: #20BD9A;
+    float: left;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 0 4px 4px 0;
+
+}
+
+/* banner */
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+.banner .carousel_list {
+    /* 设置600%目的就是防止用户不同屏幕尺寸打开屏幕会显示不一样 */
+    width: 600%;
+    overflow: hidden;
+    /* 此时的移动是基于carousel_list的宽度600% 
+    translateX的倍数是基于本身的*/
+    /* transform: translateX(-16.6%); */
+    /* 不能用left来拉，因为left的倍数是基于浏览器的
+    position: relative;
+    left: -16.6%; */
+
+    
+    
+}
+.banner .carousel_list li {
+    /* 此时注意li的宽度参考的是其父元素ul600%作为是100%，所以即要想在浏览器窗口占满全宽则表示16.667% */
+    width: 16.666%;
+    float: left;
+}
+.banner .carousel_list li img {
+    /* 此时设置图片100%是基于li */
+    width: 100%;
+    /* 使用小技巧 */
+    vertical-align: middle;
+    
+}
+/* 设置小圆点 */
+.banner .circle_list {
+    width: 150px;
+    height: 20px;
+    /* background-color: red; */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -75px;
+    /* 设置点击小手状 */
+    cursor: pointer;
+    /* 防止被压盖 */
+    z-index: 9999;
+    
+}
+.banner .circle_list li {
+    float: left;
+    background-color: #32c2a3;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    transition: all .5s ease 0s;
+}
+.banner .circle_list li.current {
+    width: 30px;
+    background-color: #04866a;
+}
+.banner .circle_list li:last-child {
+    margin-right: 0px;
+}
+
+.banner .center-wrap {
+    /* 注意此时设置了绝对定位那么center-wrap设置的居中就会失效所以后面要补回 */
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -576px;
+    /* background-color: pink; */
+    width: 1152px;
+    height: 100%;
+    
+}
+
+
+
+.banner .center-wrap .banner-nav {
+    height: 100%;
+    width: 652px;
+    position: relative;
+}
+
+.banner .center-wrap .banner-nav ul {
+    height: 100%;
+}
+.banner .center-wrap .banner-nav .menuSection .current {
+    background-color: black;
+}
+.banner .center-wrap .banner-nav .menu {
+    width: 339px;
+    height: 16.667%;
+    background-color: #1C1F21;
+    opacity: 0.5;
+    padding-left: 42px;
+    /* padding-top: 11px;
+    padding-bottom: 9px; */
+    border-bottom: rgba(241, 238, 238, 0.4) solid 1px;
+    /* 只要设置了高度是百分比，但是后面希望高度不会随着padding变换的话就用box-sizing属性 */
+    box-sizing: border-box;
+}
+
+.banner .center-wrap .banner-nav .menu dt {
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: justify;
+    line-height: 26px;
+    padding-top: 11px;
+}
+
+.banner .center-wrap .banner-nav .menu dd a {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: justify;
+    line-height: 22px;
+    margin-right: 12px;
+}
+
+.banner .center-wrap .banner-nav .menu dd a:hover {
+    color: orange;
+}
+
+/* 制作banner-nav的小箭头 */
+.banner .center-wrap .banner-nav .menu {
+    position: relative;
+}
+
+.banner .center-wrap .banner-nav .menu .arrow {
+    /* background-color: yellow; */
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    right: 15px;
+}
+
+.banner .center-wrap .banner-nav .menu .arrow b {
+    background-color: white;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    margin-top: -5px;
+    right: 0px;
+    transform: rotate(45deg);
+
+}
+
+.banner .center-wrap .banner-nav .menu .arrow i {
+    background-color: #1C1F21;
+    ;
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    top: 5.09px;
+    /* margin-top: -12px; */
+    right: 6px;
+    transform: rotate(45deg);
+}
+
+/* 制作左右banner的轮播按钮 */
+.banner .center-wrap .leftbtn {
+    width: 28px;
+    height: 44px;
+    opacity: 0.6;
+    background: #000000;
+    border-radius: 3px;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    left: -55px;
+    background: url(../images/icons.png) -21px -94px;
+
+}
+
+.banner .center-wrap .leftbtn:hover {
+    opacity: 1.3;
+}
+
+.banner .center-wrap .rightbtn {
+    width: 28px;
+    height: 44px;
+    opacity: 0.6;
+    background: #000000;
+    border-radius: 3px;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    right: -55px;
+    background: url(../images/icons.png) -21px -29px;
+}
+
+.banner .center-wrap .rightbtn:hover {
+    opacity: 1.3;
+}
+
+/* 制作banner-nav中左侧导航图标 */
+.banner .center-wrap .banner-nav .rmcfdmenu {
+    position: relative;
+}
+
+.banner .center-wrap .banner-nav .menu .lefticon {
+    width: 24px;
+    height: 19px;
+    /* background-color: pink; */
+    position: absolute;
+    top: 50%;
+    margin-top: -9.5px;
+    left: 8px;
+}
+
+
+.banner .center-wrap .banner-nav .rmcfdmenu .lefticon {
+    background: url(../images/icons.png) -29px -399px;
+}
+
+.banner .center-wrap .banner-nav .gatgnmenu .lefticon {
+    background: url(../images/icons.png) -28px -217px;
+}
+
+.banner .center-wrap .banner-nav .rbhgmenu .lefticon {
+    background: url(../images/icons.png) -25px -171px;
+}
+
+.banner .center-wrap .banner-nav .dnynymenu .lefticon {
+    background: url(../images/icons.png) -29px -351px;
+}
+
+.banner .center-wrap .banner-nav .ozmzmenu .lefticon {
+    background: url(../images/icons.png) -28px -305px;
+}
+
+.banner .center-wrap .banner-nav .oxzdfmenu .lefticon {
+    background: url(../images/icons.png) -28px -217px;
+}
+
+.banner .center-wrap .banner-nav .gatgnmenu .lefticon {
+    background: url(../images/icons.png) -28px -217px;
+}
+
+/* 制作ban-nav中的子菜单内容 结合后面js使用*/
+.banner .center-wrap .banner-nav ul li.menu {
+    position: relative;
+}
+
+/* 
+.banner .center-wrap .banner-nav .menu-box {
+    position: absolute;
+    background-color: red;
+    top: 0px;
+    left: 338px;
+    height: 100%;
+} */
+
+.banner .center-wrap .banner-nav .menu-box .menu {
+    width: 356px;
+    opacity: 0.7;
+    background: #1C1F21;
+    /* background-color: yellow; */
+    height: 100%;
+    position: absolute;
+    left: 339px;
+    top: 0px;
+    padding: 16px;
+    /* 设置box-sizing原因：后面要设置padding margin类型的时候，盒子总高度不会变 */
+    box-sizing: border-box;
+    color: white;
+    display: none;
+    z-index: 99999;
+}
+/* 选着多个css类时候不需要空格.menu.current */
+.banner .center-wrap .banner-nav .menu-box .menu.current{
+    display: block;
+}
+
+/* .banner .center-wrap .banner-nav div.menu-box div.oxzdfmenu-contex {
+    display: block;
+} */
+
+
+.banner .center-wrap .banner-nav div.menu-box div.menu dl dt {
+    font-family: PingFangSC-Semibold;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: justify;
+    line-height: 24px;
+}
+
+.banner .center-wrap .banner-nav div.menu-box div.menu dl dd {
+    padding-bottom: 12px;
+}
+
+.banner .center-wrap .banner-nav div.menu-box div.menu dl a {
+    color: white;
+}
+
+/* 热门广告 */
+.hot-ads {
+    margin: 32px 0px;
+    min-width: 1152px;
+}
+
+.hot-ads .center-wrap ul li {
+    float: left;
+    margin-right: 32px;
+    width: 264px;
+    height: 110px;
+}
+
+.hot-ads .center-wrap ul li:last-child {
+    margin-right: 0px;
+}
+
+/* 新鲜甩尾 */
+.xxsw {
+    width: 100%;
+    background-color: #F7F7F7;
+    height: 100%;
+    /* li浮动要清除浮动不然该内容只是包括h2与em */
+    /* overflow: hidden; */
+    padding-top: 40px;
+    min-width: 1152px;
+}
+
+.xxsw .center-wrap h2 {
+    float: left;
+}
+
+.xxsw .center-wrap em {
+    /* font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #1C1F21;
+    text-align: justify;
+    line-height: 18px; */
+    float: left;
+    position: relative;
+    top: 28px;
+    left: 17px;
+}
+
+.xxsw .center-wrap ul li {
+    float: left;
+    width: 264px;
+    height: 270px;
+    margin: 32px 32px 32px 0px;
+    /* box-sizing: border-box; */
+}
+
+.xxsw .center-wrap ul li:nth-child(4n) {
+    margin-right: 0px;
+}
+
+.xxsw .center-wrap ul li a .img-box {
+    width: 264px;
+    height: 184px;
+    overflow: hidden;
+}
+
+.xxsw .center-wrap ul li a .word-box {
+    background-color: #FFFFFF;
+    padding: 20px 14px 22px 14px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #1C1F21;
+    line-height: 22px;
+}
+
+.xxsw .center-wrap ul li:hover {
+    background: #FFFFFF;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+/* 机酒自由行 */
+.common-style {
+    height: 100%;
+    width: 100%;
+    min-width: 1152px;
+    padding-top: 40px;
+}
+
+
+.common-style .center-wrap .hd h2 {
+    float: left;
+}
+
+.common-style .center-wrap .hd em {
+    /* font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #000000;
+    text-align: justify;
+    line-height: 18px; */
+    float: left;
+    position: relative;
+    top: 28px;
+    left: 20px;
+}
+
+.common-part .center-wrap .hd .hd-nav {
+    padding-top: 17px;
+    float: right;
+}
+
+.common-part .center-wrap .hd .hd-nav ul li {
+    margin-right: 16px;
+    float: left;
+}
+
+.common-part .center-wrap .hd .hd-nav ul li:last-child {
+    margin-right: 0px;
+}
+
+.common-part .center-wrap .hd .hd-nav ul li .current {
+    color: #20BD9A;
+    border-bottom: solid 4px #20BD9A;
+}
+
+.common-style .center-wrap .bd {
+    padding-top: 32px;
+    /* bd因为需要浮动所以要设置清除浮动 */
+    overflow: hidden;
+}
+
+.common-style .center-wrap .bd>ul>li {
+    float: left;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    box-sizing: border-box;
+}
+
+.common-style .center-wrap .bd>ul>li:nth-child(3),
+.common-style .center-wrap .bd>ul>li:nth-child(7) {
+    margin-right: 0px;
+}
+
+.common-style .center-wrap .bd>ul>li.big-grid {
+    width: 560px;
+    height: 270px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.common-style .center-wrap .bd>ul>li.pro-grid {
+    width: 264px;
+    height: 270px;
+    /* background-color: #eee; */
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.common-part .center-wrap .bd .more-grid {
+    width: 264px;
+    height: 270px;
+    background-color: green;
+    /* background-color: #FFFFFF; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.common-style .center-wrap .bd>ul>li.pro-grid a .word-box {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #1C1F21;
+    line-height: 22px;
+    margin: 20px 14px 22px 14px;
+}
+
+.common-style .center-wrap .bd>ul>li:hover {
+    /* background: #FFFFFF; */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+.common-style .center-wrap .bd>ul>li.big-grid div.info {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 103px;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 30px 26px 29px 26px;
+    box-sizing: border-box;
+    /* 不用opacity设置透明度，因为会让字也变得透明 */
+    /* opacity: 0.55; */
+    color: white;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+}
+
+/* 设置tag的共同类，然后再各自覆盖类样式 */
+.common-style .center-wrap .bd li .tag {
+    width: 70px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 103px;
+    left: 0px;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+}
+
+.common-style .center-wrap .bd li.pro-grid .img-box {
+    position: relative;
+    height: 184px;
+    overflow: hidden;
+}
+
+.jjzyx .center-wrap .bd li.pro-grid .tag {
+    bottom: 0px;
+}
+
+.common-part .center-wrap .bd .more-grid {
+    background-image: linear-gradient(180deg, #34E3BC 0%, #15AF7A 98%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    padding-top: 46px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.common-part .center-wrap .bd .more-grid a p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 22px;
+}
+
+.common-part .center-wrap .bd .more-grid a .iconfont {
+    font-family: feather;
+    font-size: 48px;
+    color: #FFFFFF;
+    /* span标签不能用text-align: center居中
+    因此需要用绝对定位进行居中定位*/
+    /* text-align: center; */
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    left: 50%;
+    margin-left: -24px;
+    line-height: 48px;
+    top: 122px
+}
+
+.common-part .center-wrap .bd .more-grid a ul {
+    position: absolute;
+    bottom: 50px;
+}
+
+.common-part .center-wrap .bd .more-grid a ul li {
+    float: left;
+    height: 14px;
+    margin-left: 18px;
+    border-right: solid white 2px;
+    line-height: 14px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: white;
+}
+
+.common-part .center-wrap .bd .more-grid a ul li:last-child {
+    border: none;
+}
+
+/* common-part设置过渡（图片放大） */
+.common-part .center-wrap .bd ul li img {
+    transition: transform 1.5s linear 0s;
+}
+
+.common-part .center-wrap .bd ul li:hover img {
+    transform: scale(1.2);
+}
+
+/* ddwl设置过渡（图片放大） */
+.ddwl .center-wrap .bd .col .bigimg-box img,
+.ddwl .center-wrap .bd .col .grid img {
+    transition: transform 1.5s linear 0s;
+}
+
+.ddwl .center-wrap .bd .col .bigimg-box:hover img,
+.ddwl .center-wrap .bd .col .grid:hover img {
+    transform: scale(1.2);
+}
+
+/* common-part设置more-grid的（箭头浮动）动画效果 */
+/* 定义动画 */
+@keyframes ud {
+    from {
+        transform: translateY(-10px)
+    }
+
+    to {
+        transform: translateY(10px);
+    }
+}
+
+/* 调用动画 */
+.common-part .more-grid:hover .iconfont {
+    animation: ud .8s linear 0s infinite alternate;
+}
+
+/* 当地玩乐 */
+.ddwl {
+    height: 100%;
+    width: 100%;
+    min-width: 1152px;
+    padding-top: 40px;
+    background-color: #F7F7F7;
+    padding-bottom: 40px;
+}
+
+.ddwl .center-wrap .hd h2 {
+    float: left;
+}
+
+.ddwl .center-wrap .hd em {
+    position: relative;
+    top: 27px;
+    left: 23px;
+}
+
+.ddwl .center-wrap .bd .col {
+    width: 364px;
+    height: 420px;
+    margin-right: 30px;
+    /* background-color: orange; */
+    float: left;
+    margin-top: 32px;
+}
+
+.ddwl .center-wrap .bd .col:last-child {
+    margin-right: 0px;
+}
+
+.ddwl .center-wrap .bd .col .bigimg-box {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.ddwl .center-wrap .bd .col .bigimg-box .info {
+    width: 100%;
+    height: 104px;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    color: white;
+    padding: 17px 21px 0px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.ddwl .center-wrap .bd .col .bigimg-box .bottom {
+    margin-top: 6px;
+}
+
+.ddwl .center-wrap .bd .col .bigimg-box .bottom .tag {
+    float: left;
+}
+
+.ddwl .center-wrap .bd .col .bigimg-box .bottom .price {
+    float: right;
+}
+
+.ddwl .center-wrap .bd .col .bigimg-box .bottom .price strong {
+    color: #36DFBA;
+}
+
+.ddwl .center-wrap .bd .col .grid {
+    /* background-color: red; */
+    width: 364px;
+    height: 120px;
+    margin-bottom: 30px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.ddwl .center-wrap .bd .col .grid .picbox {
+    width: 120px;
+    height: 120px;
+    float: left;
+    /* 动画放大图像时候约束到盒子里面 */
+    overflow: hidden;
+}
+
+.ddwl .center-wrap .bd .col .grid .wordbox {
+    width: 244px;
+    height: 120px;
+    float: right;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #000000;
+    line-height: 22px;
+    padding: 26px 18px 28px 18px;
+    box-sizing: border-box;
+}
+
+.ddwl .center-wrap .bd .col .grid:hover,
+.ddwl .center-wrap .bd .col .bigimg-box:hover,
+.ddwl .center-wrap .bd .col .more-grid:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+.ddwl .center-wrap .bd .col .more-grid {
+    width: 364px;
+    height: 270px;
+    background-image: linear-gradient(180deg, #FF6374 1%, #FF7368 98%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.ddwl .center-wrap .bd .col .more-grid a ul li {
+    padding-right: 9px;
+    margin-right: -4px;
+}
+
+/* 特色当地体验 */
+.tsddty {
+    width: 100%;
+    height: 456px;
+    background-color: white;
+}
+
+.tsddty .center-wrap {
+    padding-top: 40px;
+}
+
+.tsddty .center-wrap .hd h2 {
+    text-align: center;
+}
+
+.tsddty .center-wrap .bd {
+    padding-top: 32px;
+}
+
+.tsddty .center-wrap .bd ul li {
+    float: left;
+    width: 264px;
+    height: 290px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    margin-right: 32px;
+}
+
+.tsddty .center-wrap .bd ul li:last-child {
+    margin-right: 0px;
+}
+
+.tsddty .center-wrap .bd ul li:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+.tsddty .center-wrap .bd ul li a .wordbox .proname {
+    padding: 16px 8px 0px 14px;
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #000000;
+    line-height: 24px;
+    height: 48px;
+}
+
+.tsddty .center-wrap .bd ul li a .wordbox .comment {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 8px;
+    padding-left: 14px;
+}
+
+.tsddty .center-wrap .bd ul li a .wordbox .score {
+    color: #FA6400;
+}
+
+.tsddty .center-wrap .bd ul li a .picbox {
+    overflow: hidden;
+}
+
+/* 最世界深度旅行 */
+.zsjsdlx {
+    height: 738px;
+    width: 100%;
+    background-color: #F7F7F7;
+}
+
+.zsjsdlx .center-wrap .bd ul li.more-grid {
+    background-image: linear-gradient(180deg, #BD5EE8 0%, #832ABB 98%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+
+}
+
+.zsjsdlx .center-wrap .bd .more-grid a ul li {
+    margin-left: 22px;
+}
+
+.zsjsdlx .center-wrap .bd ul li.more-grid:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+/* 设置最世界深度旅行的第一张图片的动画
+.big-grid.common-transition不加空格表示共同选择器 */
+.common-style .center-wrap .bd .big-grid.common-transition .mask {
+    position: absolute;
+    width: 560px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    opacity: 0;
+    transition: opacity .4s linear 0s;
+}
+
+/* 注意此时有一个坑：课程上没有讲到，这里一定要加z-index，如果不加z-index则不会显示mask，因为会给img遮住，因为大家都是绝对定位 */
+.common-style .center-wrap .bd .big-grid.common-transition:hover .mask {
+    opacity: 1;
+    z-index: 999;
+}
+
+.common-style .center-wrap .bd .big-grid.common-transition .circle {
+    position: absolute;
+    top: -106px;
+    left: 50%;
+    margin-left: -53px;
+    border-radius: 50%;
+    width: 106px;
+    height: 106px;
+    border: 1px solid white;
+    color: white;
+    box-sizing: border-box;
+    padding-top: 28px;
+    transition: top .3s linear 0s;
+}
+
+.common-style .center-wrap .bd .big-grid.common-transition .circle p {
+    text-align: center;
+    font-size: 700;
+}
+
+.common-style .center-wrap .bd .big-grid.common-transition :hover .circle {
+    top: 60px;
+    z-index: 999;
+}
+
+.common-style .center-wrap .bd .big-grid.common-transition .word {
+    position: absolute;
+    bottom: -22px;
+    margin-left: 26px;
+    width: 508px;
+    height: 22px;
+    color: white;
+    box-sizing: border-box;
+    transition: bottom .3s linear 0s;
+}
+
+.common-style .center-wrap .bd .big-grid.common-transition .word p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+}
+
+.common-style .center-wrap .bd .big-grid.common-transition:hover .word {
+    bottom: 11px;
+    z-index: 999;
+}
+
+
+/* 跟团/半自助游 */
+.gtbzzy {
+    width: 100%;
+    height: 738px;
+    background-color: #FFFFFF;
+}
+
+.gtbzzy .center-wrap .bd ul li.more-grid {
+    background-image: linear-gradient(180deg, #41D8E9 0%, #3685EA 98%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.gtbzzy .center-wrap .bd ul li.more-grid a ul li.first-li {
+    margin-left: 66px;
+    padding-right: 29px;
+}
+
+.gtbzzy .center-wrap .bd ul li:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+/* 页脚 */
+.footer {
+    width: 100%;
+    height: 220px;
+    background-color: #F7F7F7;
+    padding-top: 36px;
+}
+
+.footer .center-wrap nav ul li {
+    float: left;
+    height: 23px;
+    padding-right: 22px;
+    border-right: black 1px solid;
+    margin-right: 30px;
+}
+
+.footer .center-wrap nav ul li:last-child {
+    border: none;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+.footer .center-wrap nav ul li a {
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #1C1F21;
+    line-height: 23px;
+}
+
+.footer .center-wrap .dlbox {
+    margin-top: 68px;
+}
+
+.footer .center-wrap .dlbox dl {
+    float: left;
+    height: 76px;
+    width: 289px;
+    padding-left: 75px;
+    margin-right: 30px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #1C1F21;
+    line-height: 22px;
+}
+
+.footer .center-wrap .dlbox dl dt {
+    font-weight: bold;
+}
+
+.footer .center-wrap .dlbox dl:last-child {
+    margin-right: 0px;
+}
+
+.footer dl {
+    position: relative;
+}
+
+/* 精灵位置共性 */
+.footer dl::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 60px;
+}
+
+/* dlbox精灵位置个性 */
+.footer dl.txfw::before {
+    background: url(../images/icons.png) -150px -178px;
+}
+
+.footer dl.ccsx::before {
+    background: url(../images/icons.png) -150px -104px;
+}
+
+.footer dl.axph::before {
+    background: url(../images/icons.png) -150px -31px;
+}
+
+.footer .part2 {
+    background-color: #1C1F21;
+    width: 100%;
+    height: 225px;
+    padding-top: 48px;
+    color: white;
+}
+
+.footer .part2 .center-wrap .line1 h1 {
+    font-family: PingFangSC-Regular;
+    font-size: 46px;
+    color: #FFFFFF;
+    line-height: 46px;
+    float: left;
+    margin-right: 21px;
+    width: 230px;
+    height: 46px;
+}
+
+.footer .part2 .center-wrap .line1 p {
+    float: left;
+    width: 532px;
+    height: 44px;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.footer .part2 .center-wrap .line2 {
+    margin-top: 31px;
+    width: 560px;
+    height: 22px;
+}
+
+.footer .part2 .center-wrap .line2 ul li {
+    float: left;
+    padding-right: 16px;
+    margin-right: 10px;
+    border-right: 1px white solid;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 22px;
+}
+
+.footer .part2 .center-wrap .line2 ul li a {
+    color: white;
+}
+
+.footer .part2 .center-wrap .line2 ul li:last-child {
+    padding-right: 0px;
+    margin-right: 0px;
+    border: none;
+}
+
+.footer .part2 .center-wrap .line3 {
+    margin-top: 8px;
+}
+
+.backtotop {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    right: 80px;
+    bottom: 80px;
+    background-color: #ccc;
+    text-align: center;
+    padding-top: 18px;
+    box-sizing: border-box;
+    color: #000000;
+    display: none;
+    border-radius: 30%;
+}
